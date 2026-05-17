@@ -1,25 +1,31 @@
 {
-  "name": "Nombre de tu app",
-  "short_name": "App",
+  "name": "Taxi Merced - Servicio de Taxis CDMX",
+  "short_name": "Taxi Merced",
+  "description": "Servicio de taxis confiable en Ciudad de México con 15 años de experiencia",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "background_color": "#FFD700",
+  "orientation": "portrait",
+  "scope": "/",
   "icons": [
     {
       "src": "/assets/images/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/assets/images/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/assets/images/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

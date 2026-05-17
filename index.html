@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" href="/assets/images/icon-192x192.png">
-<meta name="theme-color" content="#ffffff">
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Taxi Merced - Servicio de Taxis en Ciudad de México</title>
     <meta name="description" content="Taxi Merced - 15 años de servicio confiable en Ciudad de México. Servicio 24/7, viajes programados y atención inmediata por WhatsApp y teléfono.">
+    
+    <!-- ✅ PWA: Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- ✅ PWA: Iconos para iOS -->
+    <link rel="apple-touch-icon" href="/assets/images/icon-192x192.png">
+    
+    <!-- ✅ PWA: Color de tema -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Taxi Merced">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -369,7 +378,6 @@
         }
 
         .carousel-image {
-            width: 100%;
             height: 500px;
             overflow: hidden;
         }
@@ -664,7 +672,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
     <header>
@@ -1010,10 +1017,18 @@
             console.log('Total de slides:', totalSlides);
         });
 
-
+        // ✅ PWA: REGISTRAR SERVICE WORKER
         if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
-}
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('✅ Service Worker registrado con éxito:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('❌ Error al registrar Service Worker:', error);
+                    });
+            });
+        }
     </script>
 </body>
 </html>
