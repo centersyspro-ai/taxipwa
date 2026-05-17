@@ -1,4 +1,4 @@
-const CACHE_NAME = 'taxi-merced-v2';
+const CACHE_NAME = 'taxi-merced-v1';
 const urlsToCache = [
   '/taxipwa/',
   '/taxipwa/index.html',
@@ -25,7 +25,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('✅ Archivos cacheados correctamente');
+        console.log('✅ Archivos cacheados');
         return cache.addAll(urlsToCache);
       })
       .catch(error => console.error('❌ Error al cachear:', error))

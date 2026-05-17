@@ -6,13 +6,13 @@
     <title>Taxi Merced - Servicio de Taxis en Ciudad de México</title>
     <meta name="description" content="Taxi Merced - 15 años de servicio confiable en Ciudad de México. Servicio 24/7, viajes programados y atención inmediata por WhatsApp y teléfono.">
     
-    <!-- ✅ PWA: Manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- ✅ PWA: MANIFEST (ruta CORRECTA para /taxipwa/) -->
+    <link rel="manifest" href="/taxipwa/manifest.json">
     
-    <!-- ✅ PWA: Iconos para iOS -->
-    <link rel="apple-touch-icon" href="/assets/images/icon-192x192.png">
+    <!-- ✅ PWA: ICONO PARA iOS -->
+    <link rel="apple-touch-icon" href="/taxipwa/assets/images/icon-192x192.png">
     
-    <!-- ✅ PWA: Color de tema -->
+    <!-- ✅ PWA: CONFIGURACIÓN -->
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -24,9 +24,9 @@
     <style>
         /* Variables CSS */
         :root {
-            --primary-color: #FFD700; /* Amarillo taxi */
-            --secondary-color: #000000; /* Negro */
-            --accent-color: #333333; /* Gris oscuro */
+            --primary-color: #FFD700;
+            --secondary-color: #000000;
+            --accent-color: #333333;
             --text-color: #333333;
             --light-color: #f8f8f8;
             --white: #ffffff;
@@ -34,7 +34,6 @@
             --transition: all 0.3s ease;
         }
 
-        /* Reset y estilos base */
         * {
             margin: 0;
             padding: 0;
@@ -114,7 +113,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Header */
         header {
             background-color: var(--secondary-color);
             color: var(--white);
@@ -198,7 +196,6 @@
             transition: var(--transition);
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero.png') no-repeat center center/cover;
@@ -226,7 +223,6 @@
             margin-bottom: 2rem;
         }
 
-        /* About Section */
         .about {
             background-color: var(--light-color);
         }
@@ -263,7 +259,6 @@
             transform: scale(1.02);
         }
 
-        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -309,7 +304,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Text-Image Sections */
         .text-image {
             display: flex;
             flex-wrap: wrap;
@@ -347,7 +341,6 @@
             transform: scale(1.02);
         }
 
-        /* Gallery Section - CSS SIMPLIFICADO Y CORREGIDO */
         .gallery {
             background-color: var(--light-color);
         }
@@ -368,11 +361,11 @@
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: 500%; /* 5 slides = 500% */
+            width: 500%;
         }
 
         .carousel-slide {
-            width: 20%; /* Cada slide ocupa 20% del ancho total (100%/5) */
+            width: 20%;
             flex-shrink: 0;
             position: relative;
         }
@@ -454,8 +447,6 @@
             background-color: var(--primary-color);
         }
 
-
-        /* Map Section */
         .map-container {
             border-radius: 8px;
             overflow: hidden;
@@ -469,7 +460,6 @@
             border: none;
         }
 
-        /* Footer */
         footer {
             background-color: var(--secondary-color);
             color: var(--white);
@@ -553,7 +543,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* WhatsApp Button */
         .whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -594,7 +583,6 @@
             }
         }
 
-        /* Responsive Styles */
         @media (max-width: 768px) {
             .header-container {
                 padding: 1rem 0;
@@ -673,7 +661,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -697,7 +684,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>TAXI MERCED</h1>
@@ -707,7 +693,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="section about" id="nosotros">
         <div class="container">
             <h2 class="section-title">Sobre Nosotros</h2>
@@ -724,7 +709,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="section" id="servicios">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
@@ -760,7 +744,6 @@
         </div>
     </section>
 
-    <!-- Text-Image Section 1 -->
     <section class="section">
         <div class="container">
             <div class="text-image">
@@ -777,7 +760,6 @@
         </div>
     </section>
 
-    <!-- Text-Image Section 2 -->
     <section class="section">
         <div class="container">
             <div class="text-image reverse">
@@ -794,14 +776,12 @@
         </div>
     </section>
 
-    <!-- Gallery Section - HTML SIMPLIFICADO -->
     <section class="section gallery" id="galeria">
         <div class="container">
             <h2 class="section-title">Nuestra Flota</h2>
             <div class="carousel">
                 <div class="carousel-track-container">
                     <div class="carousel-track">
-                        <!-- Slide 1 -->
                         <div class="carousel-slide">
                             <div class="carousel-image">
                                 <img src="assets/images/taxi1.jpg" alt="Vehículo moderno y cómodo de Taxi Merced">
@@ -810,7 +790,6 @@
                                 <p>Vehículos modernos y cómodos para tu máximo confort</p>
                             </div>
                         </div>
-                        <!-- Slide 2 -->
                         <div class="carousel-slide">
                             <div class="carousel-image">
                                 <img src="assets/images/taxi2.jpg" alt="Interior limpio y espacioso de Taxi Merced">
@@ -819,7 +798,6 @@
                                 <p>Interiores limpios y espaciosos para viajes placenteros</p>
                             </div>
                         </div>
-                        <!-- Slide 3 -->
                         <div class="carousel-slide">
                             <div class="carousel-image">
                                 <img src="assets/images/taxi3.jpg" alt="Taxi equipado con tecnología de Taxi Merced">
@@ -828,7 +806,6 @@
                                 <p>Equipados con la última tecnología para tu seguridad</p>
                             </div>
                         </div>
-                        <!-- Slide 4 -->
                         <div class="carousel-slide">
                             <div class="carousel-image">
                                 <img src="assets/images/taxi4.jpg" alt="Mantenimiento regular de Taxi Merced">
@@ -837,7 +814,6 @@
                                 <p>Mantenimiento regular para garantizar tu seguridad</p>
                             </div>
                         </div>
-                        <!-- Slide 5 -->
                         <div class="carousel-slide">
                             <div class="carousel-image">
                                 <img src="assets/images/taxi5.jpg" alt="Conductor profesional de Taxi Merced">
@@ -861,7 +837,6 @@
         </div>
     </section>
 
-    <!-- Map Section -->
     <section class="section" id="contacto">
         <div class="container">
             <h2 class="section-title">Nuestra Ubicación</h2>
@@ -871,7 +846,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -924,7 +898,6 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/524427128200" class="whatsapp-btn" target="_blank" aria-label="Contactar por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.248-6.189-3.515-8.452"/>
@@ -948,7 +921,7 @@
             });
         });
 
-        // CARRUSEL - CÓDIGO COMPLETAMENTE NUEVO Y SIMPLIFICADO
+        // Carrusel
         document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.querySelector('.carousel');
             const track = document.querySelector('.carousel-track');
@@ -960,36 +933,28 @@
             let currentIndex = 0;
             const totalSlides = slides.length;
             
-            // Función para actualizar la posición del carrusel
             function updateCarousel() {
-                // Mover el track al slide actual
                 track.style.transform = `translateX(-${currentIndex * 20}%)`;
-                
-                // Actualizar indicadores
                 indicators.forEach((indicator, index) => {
                     indicator.classList.toggle('active', index === currentIndex);
                 });
             }
             
-            // Función para ir al slide específico
             function goToSlide(index) {
                 currentIndex = index;
                 updateCarousel();
             }
             
-            // Función para siguiente slide
             function nextSlide() {
                 currentIndex = (currentIndex + 1) % totalSlides;
                 updateCarousel();
             }
             
-            // Función para slide anterior
             function prevSlide() {
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateCarousel();
             }
             
-            // Event listeners
             nextButton.addEventListener('click', nextSlide);
             prevButton.addEventListener('click', prevSlide);
             
@@ -997,46 +962,25 @@
                 indicator.addEventListener('click', () => goToSlide(index));
             });
             
-            // Auto slide cada 5 segundos
             let autoSlide = setInterval(nextSlide, 5000);
             
-            // Pausar auto slide cuando el mouse está sobre el carrusel
             carousel.addEventListener('mouseenter', () => {
                 clearInterval(autoSlide);
             });
             
-            // Reanudar auto slide cuando el mouse sale del carrusel
             carousel.addEventListener('mouseleave', () => {
                 autoSlide = setInterval(nextSlide, 5000);
             });
             
-            // Inicializar
             updateCarousel();
-            
-            console.log('Carrusel inicializado correctamente');
-            console.log('Total de slides:', totalSlides);
         });
 
-        // ✅ PWA: REGISTRAR SERVICE WORKER
+        // ✅ REGISTRO DEL SERVICE WORKER
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('/taxipwa/sw.js')
                     .then(function(registration) {
-                        console.log('✅ Service Worker registrado con éxito:', registration.scope);
-                    })
-                    .catch(function(error) {
-                        console.log('❌ Error al registrar Service Worker:', error);
-                    });
-            });
-        }
-    </script>
-     <!-- REGISTRO DEL SERVICE WORKER PARA PWA -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/taxipwa/sw.js')
-                    .then(function(reg) {
-                        console.log('✅ Service Worker registrado correctamente en:', reg.scope);
+                        console.log('✅ Service Worker registrado correctamente');
                     })
                     .catch(function(error) {
                         console.log('❌ Error al registrar Service Worker:', error);

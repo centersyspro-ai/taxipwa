@@ -1,7 +1,7 @@
 {
-  "name": "Taxi Merced - Servicio de Taxis CDMX",
+  "name": "Taxi Merced",
   "short_name": "Taxi Merced",
-  "description": "Servicio de taxis confiable en Ciudad de México con 15 años de experiencia",
+  "description": "Servicio de taxis confiable en Ciudad de México",
   "start_url": "/taxipwa/",
   "display": "standalone",
   "theme_color": "#000000",
