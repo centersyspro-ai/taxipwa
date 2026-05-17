@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/images/icon-192x192.png">
+<meta name="theme-color" content="#ffffff">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Merced - Servicio de Taxis en Ciudad de México</title>
+    <meta name="description" content="Taxi Merced - 15 años de servicio confiable en Ciudad de México. Servicio 24/7, viajes programados y atención inmediata por WhatsApp y teléfono.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary-color: #FFD700; /* Amarillo taxi */
+            --secondary-color: #000000; /* Negro */
+            --accent-color: #333333; /* Gris oscuro */
+            --text-color: #333333;
+            --light-color: #f8f8f8;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 250px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Text-Image Sections */
+        .text-image {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+        }
+
+        .text-image.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .text-image .text-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 2rem;
+        }
+
+        .text-image .image-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .text-image .image-content img {
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .text-image .image-content img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Gallery Section - CSS SIMPLIFICADO Y CORREGIDO */
+        .gallery {
+            background-color: var(--light-color);
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 500%; /* 5 slides = 500% */
+        }
+
+        .carousel-slide {
+            width: 20%; /* Cada slide ocupa 20% del ancho total (100%/5) */
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--white);
+            border: none;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+            border-radius: 4px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+            border-radius: 4px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 8px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .carousel-indicator.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .carousel-indicator:hover {
+            background-color: var(--primary-color);
+        }
+
+
+        /* Map Section */
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -8px;
+            left: 0;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-btn svg {
+            width: 35px;
+            height: 35px;
+            fill: var(--white);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 0;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-text, .text-image .text-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            .text-image .text-content {
+                padding: 0;
+            }
+
+            .carousel-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/images/logo.jpg" alt="Taxi Merced Logo">
+                <div class="logo-text">TAXI MERCED</div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>TAXI MERCED</h1>
+            <p>15 años de servicio confiable en la Ciudad de México</p>
+            <p>Servicio 24/7, 365 días al año</p>
+            <a href="https://wa.me/524427128200" class="btn" target="_blank">Reserva por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="nosotros">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Con más de 15 años de experiencia, Taxi Merced se ha consolidado como una de las opciones más confiables para el transporte en la Ciudad de México. Nuestro compromiso es ofrecer un servicio seguro, puntual y profesional a todos nuestros clientes.</p>
+                    <p>Nos especializamos en servicios prefijados para personas que necesitan transporte regular de lunes a viernes a la misma hora, así como en servicios bajo demanda para cualquier necesidad de movilidad en la ciudad.</p>
+                    <p>Nuestro equipo de conductores está altamente capacitado y conoce perfectamente las rutas de la ciudad, garantizando que llegues a tu destino de manera segura y eficiente.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/acerca-de-nosotros.jpg" alt="Sobre nosotros" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/servicio-regular.jpg" alt="Servicio Regular de Taxi Merced" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Servicios Prefijados</h3>
+                        <p>Ideal para personas que necesitan transporte regular de lunes a viernes a la misma hora. Programamos tu viaje y te recogemos puntualmente cada día.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/servicio-24horas.jpg" alt="Servicio 24 Horas de Taxi Merced" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Servicio 24 Horas</h3>
+                        <p>Disponibles las 24 horas del día, los 365 días del año. Ya sea temprano por la mañana o tarde en la noche, estamos aquí para llevarte a tu destino.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/reserva-inmediata.jpg" alt="Reserva Inmediata de Taxi Merced" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Reserva Inmediata</h3>
+                        <p>¿Necesitas un taxi ahora? Llámanos o escríbenos por WhatsApp y en minutos tendrás un taxi en tu ubicación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text-Image Section 1 -->
+    <section class="section">
+        <div class="container">
+            <div class="text-image">
+                <div class="text-content">
+                    <h2>Nuestra Experiencia</h2>
+                    <p>Con 15 años de servicio ininterrumpido en la Ciudad de México, hemos desarrollado un profundo conocimiento de las rutas, horarios pico y alternativas para garantizar que nuestros clientes lleguen a tiempo a sus destinos.</p>
+                    <p>Nuestros conductores son seleccionados cuidadosamente y reciben capacitación continua en manejo defensivo, atención al cliente y conocimiento de la ciudad.</p>
+                    <p>Miles de clientes satisfechos confían en nosotros para sus desplazamientos diarios, eventos especiales y viajes al aeropuerto.</p>
+                </div>
+                <div class="image-content">
+                    <img src="assets/images/conductor-experimentado.jpg" alt="Conductor experimentado de Taxi Merced" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text-Image Section 2 -->
+    <section class="section">
+        <div class="container">
+            <div class="text-image reverse">
+                <div class="text-content">
+                    <h2>Compromiso con la Seguridad</h2>
+                    <p>La seguridad de nuestros pasajeros es nuestra máxima prioridad. Todos nuestros vehículos son sometidos a mantenimiento preventivo regular para garantizar su óptimo funcionamiento.</p>
+                    <p>Implementamos protocolos de sanitización exhaustivos en todos nuestros taxis, especialmente importantes en el contexto actual.</p>
+                    <p>Nuestros conductores cumplen con todos los requisitos legales y cuentan con seguros de responsabilidad civil para mayor tranquilidad de nuestros clientes.</p>
+                </div>
+                <div class="image-content">
+                    <img src="assets/images/taxi-seguro.jpg" alt="Taxi seguro de Taxi Merced" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - HTML SIMPLIFICADO -->
+    <section class="section gallery" id="galeria">
+        <div class="container">
+            <h2 class="section-title">Nuestra Flota</h2>
+            <div class="carousel">
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide">
+                            <div class="carousel-image">
+                                <img src="assets/images/taxi1.jpg" alt="Vehículo moderno y cómodo de Taxi Merced">
+                            </div>
+                            <div class="carousel-caption">
+                                <p>Vehículos modernos y cómodos para tu máximo confort</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <div class="carousel-image">
+                                <img src="assets/images/taxi2.jpg" alt="Interior limpio y espacioso de Taxi Merced">
+                            </div>
+                            <div class="carousel-caption">
+                                <p>Interiores limpios y espaciosos para viajes placenteros</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <div class="carousel-image">
+                                <img src="assets/images/taxi3.jpg" alt="Taxi equipado con tecnología de Taxi Merced">
+                            </div>
+                            <div class="carousel-caption">
+                                <p>Equipados con la última tecnología para tu seguridad</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide">
+                            <div class="carousel-image">
+                                <img src="assets/images/taxi4.jpg" alt="Mantenimiento regular de Taxi Merced">
+                            </div>
+                            <div class="carousel-caption">
+                                <p>Mantenimiento regular para garantizar tu seguridad</p>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide">
+                            <div class="carousel-image">
+                                <img src="assets/images/taxi5.jpg" alt="Conductor profesional de Taxi Merced">
+                            </div>
+                            <div class="carousel-caption">
+                                <p>Conductores profesionales con amplia experiencia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-index="0"></button>
+                    <button class="carousel-indicator" data-index="1"></button>
+                    <button class="carousel-indicator" data-index="2"></button>
+                    <button class="carousel-indicator" data-index="3"></button>
+                    <button class="carousel-indicator" data-index="4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Nuestra Ubicación</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1882.2881654136556!2d-99.17040856171164!3d19.34418222626885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1764462915364!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TAXI MERCED</h3>
+                    <p>15 años de servicio confiable en la Ciudad de México. Tu seguridad y satisfacción son nuestra prioridad.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Teléfono: <a href="tel:+524427128200">+52 442 712 8200</a></li>
+                        <li>WhatsApp: <a href="https://wa.me/524427128200">+52 442 712 8200</a></li>
+                        <li>Dirección: Calle Beta No.21, Col. Romero de Terreros, Coyoacán, Ciudad de México</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.016 10.016 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.543l-.047-.02z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Taxi Merced. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/524427128200" class="whatsapp-btn" target="_blank" aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.248-6.189-3.515-8.452"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // CARRUSEL - CÓDIGO COMPLETAMENTE NUEVO Y SIMPLIFICADO
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const nextButton = document.querySelector('.carousel-btn.next');
+            const prevButton = document.querySelector('.carousel-btn.prev');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            
+            // Función para actualizar la posición del carrusel
+            function updateCarousel() {
+                // Mover el track al slide actual
+                track.style.transform = `translateX(-${currentIndex * 20}%)`;
+                
+                // Actualizar indicadores
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // Función para ir al slide específico
+            function goToSlide(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+            
+            // Función para siguiente slide
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }
+            
+            // Función para slide anterior
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+            
+            // Event listeners
+            nextButton.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Auto slide cada 5 segundos
+            let autoSlide = setInterval(nextSlide, 5000);
+            
+            // Pausar auto slide cuando el mouse está sobre el carrusel
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(autoSlide);
+            });
+            
+            // Reanudar auto slide cuando el mouse sale del carrusel
+            carousel.addEventListener('mouseleave', () => {
+                autoSlide = setInterval(nextSlide, 5000);
+            });
+            
+            // Inicializar
+            updateCarousel();
+            
+            console.log('Carrusel inicializado correctamente');
+            console.log('Total de slides:', totalSlides);
+        });
+
+
+        if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+    </script>
+</body>
+</html>
