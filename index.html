@@ -1020,9 +1020,23 @@
         // ✅ PWA: REGISTRAR SERVICE WORKER
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('/taxipwa/sw.js')
                     .then(function(registration) {
                         console.log('✅ Service Worker registrado con éxito:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('❌ Error al registrar Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+     <!-- REGISTRO DEL SERVICE WORKER PARA PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/taxipwa/sw.js')
+                    .then(function(reg) {
+                        console.log('✅ Service Worker registrado correctamente en:', reg.scope);
                     })
                     .catch(function(error) {
                         console.log('❌ Error al registrar Service Worker:', error);
